@@ -23,7 +23,12 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WGST9B8');</script>
     <!-- End Google Tag Manager -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function onSubmit(token) {
+            console.log(token);
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -57,10 +62,6 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGST9B8"
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <script>
-        function onSubmit(token) {
-           console.log(token);
-        }
-    </script>
+
 </body>
 </html>
