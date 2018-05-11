@@ -42,9 +42,9 @@
             </article>
         </section>
         <section>
-            <form action="">
-
-                <div class="g-recaptcha" data-sitekey="6Leno1gUAAAAAJLqMRYmWcpkG2ycZhGPvhxC77ga"></div>
+            <form id='demo-form' action="?" method="POST">
+                <button class="g-recaptcha" data-sitekey="your_site_key" data-callback='onSubmit'>Submit</button>
+                <br/>
             </form>
         </section>
     </main>
@@ -57,6 +57,10 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGST9B8"
                       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
+    <script>
+        function onSubmit(token) {
+           console.log(token);
+        }
+    </script>
 </body>
 </html>
