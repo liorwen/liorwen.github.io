@@ -28,17 +28,7 @@
     <script>
         function onSubmit(token) {
             console.log(token);
-            $.ajax({
-                url:'https://www.google.com/recaptcha/api/siteverify',
-                method:'POST',
-                data:{
-                    secret:'6LfXpFgUAAAAAAAn1-y_du5Xwz0TYIt5vcL0Ltwv',
-                    response:token
-                },
-                success:function (respo) {
-                    console.log(respo);
-                }
-            })
+
         }
     </script>
 </head>
