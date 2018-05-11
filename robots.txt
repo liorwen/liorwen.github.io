@@ -1,0 +1,5 @@
+User-agent: Googlebot
+Disallow: /ga-test/backend.html
+
+User-agent: *
+Allow: /ga-test/index.html
