@@ -17,7 +17,7 @@
                         img.addEventListener('load', function (e) {
                             var canvas = document.createElement('canvas');
                             var ctx = canvas.getContext('2d');
-                            var cWidth = 400;
+                            var cWidth = $(preview).data('width');
                             var scale = e.target.width / cWidth;
                             var cHeight = Math.round(e.target.height / scale);
                             canvas.height = cHeight;
