@@ -21,6 +21,7 @@
             })
             render.readAsDataURL(e.target.files[0]);
         })
+        return this;
     }
 
 
