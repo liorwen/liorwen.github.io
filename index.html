@@ -47,10 +47,10 @@
         </nav>
     </header>
     <main>
-        <input type="file" id="eleFile" accept="image/*" multiple>
-        <canvas id="previewCanvas" data-width="400">
+        <input type="file" id="eleFile" accept="image/*" multiple data-preview="preview">
+        <div id="preview">
 
-        </canvas>
+        </div>
     </main>
     <footer>
         <address>
@@ -65,7 +65,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <script>
         $(function () {
-            $('#previewCanvas').compress();
+            $('#eleFile').preview();
         })
     </script>
 </body>
