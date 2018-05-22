@@ -20,6 +20,7 @@
                             var cWidth = $(preview).data('width');
                             var scale = e.target.width / cWidth;
                             var cHeight = Math.round(e.target.height / scale);
+                            canvas.width = cWidth;
                             canvas.height = cHeight;
                             ctx.drawImage(e.target, 0, 0, cWidth, cHeight);
 
