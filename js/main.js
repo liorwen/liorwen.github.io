@@ -32,11 +32,7 @@
 
                             $(preview).append(canvas);
                             document.addEventListener('mousemove',canvasMouseMove);
-                            var picker = document.getElementsByClassName('picker')[0];
-                            picker.addEventListener('mousemove',function (e) {
-                                // var mousemove = new CustomEvent('mousemove',e);
-                                // canvas.dispatchEvent(mousemove);
-                            })
+
 
                         })
                         img.src = e.target.result;
