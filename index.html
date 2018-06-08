@@ -50,6 +50,14 @@
     <main>
         <script>
             (function() {
+                window.__gcse = {
+                    callback: myCallback
+                };
+
+                function myCallback() {
+                    console.log('123123');
+                }
+
                 var cx = '008989651001154016073:bu_chx5biec';
                 var gcse = document.createElement('script');
                 gcse.type = 'text/javascript';
