@@ -35,6 +35,8 @@
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-WGST9B8');</script>
     <!-- End Google Tag Manager -->
+
+
     <link rel="stylesheet" href="style.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
@@ -91,6 +93,32 @@
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1868846679874477',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v3.0'
+            });
+
+            FB.AppEvents.logPageView();
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        };
+        window.statusChangeCallback = function (response) {
+            console.log(response);
+        }
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <script>
         $(function () {
             $('#eleFile').preview();
