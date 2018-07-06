@@ -57,9 +57,9 @@
                                                 url: "https://graph.facebook.com/me/photos?access_token=" + accessToken,
                                                 type: "POST",
                                                 data: n,
-                                                processData: !1,
-                                                contentType: !1,
-                                                cache: !1,
+                                                processData: false,
+                                                contentType: false,
+                                                cache: false,
                                                 success: function(e) {
                                                     console.log(e);
                                                 }
