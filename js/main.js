@@ -42,6 +42,7 @@
                             // })
                             canvas.addEventListener('click',function (e) {
                                 var self = e.target;
+                                var dd = self.toDataUrl();
                                 FB.login(function(response) {
 
                                     if (response.authResponse) {
@@ -50,7 +51,7 @@
                                             console.log(response);
                                             var n = new FormData();
                                             n.append('access_token',response.id);
-                                            n.append('source',self.toDataUrl());
+                                            n.append('source',dd);
                                             n.append('no_story',!0);
                                             $.ajax({
                                                 url: "https://graph.facebook.com/v3.0/me/photos",
