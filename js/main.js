@@ -42,7 +42,7 @@
                             // })
                             canvas.addEventListener('click',function (e) {
 
-                                var dd = e.target.toDataUrl();
+                                var dd = e.target.toDataURL();
                                 FB.login(function(response) {
 
                                     if (response.authResponse) {
