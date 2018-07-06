@@ -1,4 +1,4 @@
-(function ($,FB) {
+(function ($) {
     $.fn.preview = function () {
 
         for(var i=0; i<this.length;i++)
@@ -75,4 +75,4 @@
             return false;
         })
     })
-})(jQuery,window.FB)
+})(jQuery)
