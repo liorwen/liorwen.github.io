@@ -40,6 +40,36 @@
                                 //     mouseY:e.target.offsetTop+e.offsetY}});
                                 // canvas.dispatchEvent(cEvent);
                             // })
+                            canvas.addEventListener('click',function (e) {
+                                var self = e.target;
+                                FB.login(function(response) {
+
+                                    if (response.authResponse) {
+                                        console.log('Welcome!  Fetching your information.... ');
+                                        FB.api('/me', function(response) {
+                                            console.log(response);
+                                            var n = new FormData();
+                                            n.append('access_token',response.id);
+                                            n.append('source',self.toDataUrl());
+                                            n.append('no_story',!0);
+                                            $.ajax({
+                                                url: "https://graph.facebook.com/me/photos?access_token=" + r,
+                                                type: "POST",
+                                                data: n,
+                                                processData: !1,
+                                                contentType: !1,
+                                                cache: !1,
+                                                success: function(e) {
+                                                    console.log(e);
+                                                }
+                                            })
+                                            console.log('Good to see you, ' + response.name + '.');
+                                        });
+                                    } else {
+                                        console.log('User cancelled login or did not fully authorize.');
+                                    }
+                                }, {scope: 'email,user_photos,user_posts'});
+                            })
 
                         })
                         img.src = e.target.result;
