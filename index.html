@@ -81,7 +81,7 @@
 
         </div>
         <!--<div class="picker"></div>-->
-        <input id="btn-fb" type="button" value="fb 登入" style="display: none">
+        <input id="btn-fb" type="button" value="fb 登入" class="hidden">
     </main>
     <footer>
         <address>
@@ -108,7 +108,7 @@
                 console.log(response);
                 if(response.status === 'connected')
                 {
-                    $('#btn-fb').css('display','button');
+                    $('#btn-fb').removeClass('hidden');
                 }
             });
         };
