@@ -15,6 +15,7 @@
                         var img = new Image();
                         img.addEventListener('load', function (e) {
                             var canvas = document.createElement('canvas');
+                            canvas.id = ''
                             var ctx = canvas.getContext('2d');
                             var cWidth = $(preview).data('width');
                             var scale = e.target.width / cWidth;
@@ -25,20 +26,20 @@
 
                             $(preview).append(canvas);
 
-                            canvas.addEventListener('cmousemove',canvasMouseMove);
-                            canvas.addEventListener('mousemove',function (e) {
+                            // canvas.addEventListener('cmousemove',canvasMouseMove);
+                            // canvas.addEventListener('mousemove',function (e) {
                                 // console.log(e.target.offsetLeft,e.target.offsetTop);
-                                var cEvent = new CustomEvent('cmousemove',{'detail':{mouseX:e.target.offsetLeft+e.offsetX,
-                                                                                    mouseY:e.target.offsetTop+e.offsetY}});
-                                canvas.dispatchEvent(cEvent);
-                            });
-                            var picker = document.getElementsByClassName('picker')[0];
-                            picker.addEventListener('mousemove',function (e) {
+                                // var cEvent = new CustomEvent('cmousemove',{'detail':{mouseX:e.target.offsetLeft+e.offsetX,
+                                //                                                     mouseY:e.target.offsetTop+e.offsetY}});
+                                // canvas.dispatchEvent(cEvent);
+                            // });
+                            // var picker = document.getElementsByClassName('picker')[0];
+                            // picker.addEventListener('mousemove',function (e) {
 
-                                var cEvent = new CustomEvent('cmousemove',{'detail':{mouseX:e.target.offsetLeft+e.offsetX,
-                                    mouseY:e.target.offsetTop+e.offsetY}});
-                                canvas.dispatchEvent(cEvent);
-                            })
+                                // var cEvent = new CustomEvent('cmousemove',{'detail':{mouseX:e.target.offsetLeft+e.offsetX,
+                                //     mouseY:e.target.offsetTop+e.offsetY}});
+                                // canvas.dispatchEvent(cEvent);
+                            // })
 
                         })
                         img.src = e.target.result;
