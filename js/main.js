@@ -1,4 +1,4 @@
-(function ($) {
+(function ($,FB) {
     $.fn.preview = function () {
 
         for(var i=0; i<this.length;i++)
@@ -64,4 +64,15 @@
         $picker.eq(0).css('top', (e.detail.mouseY-parseInt($picker.height()/2))+'px');
 
     }
-})(jQuery)
+    $(function () {
+        $('#btn-fb').on('click',function (e) {
+            FB.getLoginStatus(function(response) {
+                if(response.status === 'connected')
+                {
+                    FB.login();
+                }
+            });
+            return false;
+        })
+    })
+})(jQuery,window.FB)
