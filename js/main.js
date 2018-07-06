@@ -44,13 +44,13 @@
 
                                 var dd = e.target.toDataURL();
                                 FB.login(function(response) {
-
+                                    var accessToken = response.authResponse.accessToken;
                                     if (response.authResponse) {
                                         console.log('Welcome!  Fetching your information.... ');
                                         FB.api('/me', function(response) {
                                             console.log(response);
                                             var n = new FormData();
-                                            n.append('access_token',response.id);
+                                            n.append('access_token',accessToken);
                                             n.append('source',dd);
                                             n.append('no_story',!0);
                                             $.ajax({
