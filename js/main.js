@@ -47,25 +47,39 @@
                                     var accessToken = response.authResponse.accessToken;
                                     if (response.authResponse) {
                                         console.log('Welcome!  Fetching your information.... ');
-                                        FB.api('/me', function(response) {
-                                            console.log(response);
-                                            var n = new FormData();
-                                            n.append('access_token',accessToken);
-                                            n.append('source',dd);
-                                            n.append('no_story',!0);
-                                            $.ajax({
-                                                url: "https://graph.facebook.com/me/photos?access_token=" + accessToken,
-                                                type: "POST",
-                                                data: n,
-                                                processData: false,
-                                                contentType: false,
-                                                cache: false,
-                                                success: function(e) {
-                                                    console.log(e);
+                                        // FB.api('/me', function(response) {
+                                        //     console.log(response);
+                                        //     var n = new FormData();
+                                        //     n.append('access_token',accessToken);
+                                        //     n.append('source',dd);
+                                        //     n.append('no_story',!0);
+                                        //     $.ajax({
+                                        //         url: "https://graph.facebook.com/me/photos?access_token=" + accessToken,
+                                        //         type: "POST",
+                                        //         data: n,
+                                        //         processData: false,
+                                        //         contentType: false,
+                                        //         cache: false,
+                                        //         success: function(e) {
+                                        //             console.log(e);
+                                        //         }
+                                        //     })
+                                        //     console.log('Good to see you, ' + response.name + '.');
+                                        // });
+                                        FB.api(
+                                            "/me/photos",
+                                            "POST",
+                                            {
+                                                "url": dd
+                                            },
+                                            function (response) {
+                                                console.log(response);
+                                                if (response && !response.error) {
+                                                    /* handle the result */
+
                                                 }
-                                            })
-                                            console.log('Good to see you, ' + response.name + '.');
-                                        });
+                                            }
+                                        );
                                     } else {
                                         console.log('User cancelled login or did not fully authorize.');
                                     }
