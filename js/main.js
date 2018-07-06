@@ -41,8 +41,8 @@
                                 // canvas.dispatchEvent(cEvent);
                             // })
                             canvas.addEventListener('click',function (e) {
-                                var self = e.target;
-                                var dd = self.toDataUrl();
+
+                                var dd = e.target.toDataUrl();
                                 FB.login(function(response) {
 
                                     if (response.authResponse) {
