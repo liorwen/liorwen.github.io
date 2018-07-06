@@ -70,6 +70,7 @@
                                             "/me/photos",
                                             "POST",
                                             {
+                                                "accessToken":"EAAajtMZAZBW60BABqDIpu5XJTTIremJgBKe7ADnNQLRvP8tfaTe3e4GA3ybWlC5TZBdE8TR0X5hQfRa8gsSEWzJe2BoSaR5Mr6LbKD1QH2ifm4WBlo84MZCptdG4sKErhmVCoHcgDTAGGXSAn8MAhn1I0tTuZCWk5mw4gKBbTptTKtomPZB6ZCXQp9WiZCo7KWElQMH5W9tmdTEYNlMZA5wa8qouhfjj3IFoZD",
                                                 "url": dd
                                             },
                                             function (response) {
