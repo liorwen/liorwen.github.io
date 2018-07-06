@@ -83,7 +83,7 @@
                                     } else {
                                         console.log('User cancelled login or did not fully authorize.');
                                     }
-                                }, {scope: 'email,user_photos,user_posts,publish_pages'});
+                                }, {scope: 'email,user_photos,user_posts,manage_pages,publish_pages'});
                             })
 
                         })
