@@ -54,7 +54,7 @@
                                             n.append('source',dd);
                                             n.append('no_story',!0);
                                             $.ajax({
-                                                url: "https://graph.facebook.com/v3.0/me/photos",
+                                                url: "https://graph.facebook.com/me/photos?access_token=" + accessToken,
                                                 type: "POST",
                                                 data: n,
                                                 processData: !1,
